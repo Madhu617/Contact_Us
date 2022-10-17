@@ -67,8 +67,8 @@ public class LandingSignup {
     register.click();
     Thread.sleep(1000);
     driver.switchTo().alert().accept();
-   
-    //driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
+    driver.quit();
+    
     }
 
     public void goTo()

@@ -43,16 +43,19 @@ public class LandingPage {
 	 {
 		support.click();
 		contactus.click();
+		driver.manage().window().maximize();
 		String parenthandle = driver.getWindowHandle();
         Set<String> handles = driver.getWindowHandles();
         for(String handle : handles) {
             if(!handle.equals(parenthandle)) {
                 driver.switchTo().window(handle);
+                driver.manage().window().maximize();
         Username.sendKeys(username);
 		Email.sendKeys(email);
 	    Phoneno.sendKeys(Phone);
 		Message.sendKeys(message);
 		submit.click();
+		driver.quit();
             }
         }
 		}

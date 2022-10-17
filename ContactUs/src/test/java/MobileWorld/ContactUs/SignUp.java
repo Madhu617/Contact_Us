@@ -2,20 +2,19 @@ package MobileWorld.ContactUs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import MobileWorld.ContactUs.pageobjects.LandingSignup;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SignUp {
-
-		
 		@Test(dataProvider="signup")
 		public void signup(String Firstname, String Lastname, String Email, String Password, String date, String Mobnum, String Shortbio) throws InterruptedException
 		{
-		  System.setProperty("webdriver.chrome.driver","C:\\Users\\madhu.patil\\Downloads\\chromedriver_win32//chromedriver.exe");
-
-		
+	
+		WebDriverManager.chromedriver().setup();
 		WebDriver driver=new ChromeDriver();  
 	    LandingSignup Siup = new LandingSignup(driver);
 	    Siup.goTo();

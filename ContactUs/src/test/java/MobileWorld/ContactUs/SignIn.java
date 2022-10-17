@@ -6,14 +6,15 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import MobileWorld.ContactUs.pageobjects.LandingSignin;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SignIn {
 	
 
 @Test(dataProvider = "signin")
   public void signin(String username,String password) throws InterruptedException{
-	  System.setProperty("webdriver.chrome.driver","C:\\Users\\madhu.patil\\Downloads\\chromedriver_win32//chromedriver.exe");
 
+     WebDriverManager.chromedriver().setup();
     WebDriver driver = new ChromeDriver();
     LandingSignin Siin = new LandingSignin(driver);
     Siin.goTo();

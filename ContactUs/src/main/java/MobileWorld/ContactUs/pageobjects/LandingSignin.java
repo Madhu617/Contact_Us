@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import dev.failsafe.internal.util.Assert;
+
 public class LandingSignin {
 
 	WebDriver driver;
@@ -33,10 +35,11 @@ public class LandingSignin {
 		 Password.sendKeys(passwordd);
 		 Thread.sleep(1000);
 		 login.click();
+		 driver.quit();
 	 }
 	   public void goTo()
 	     {
-	        driver.get("https://mobileworld.banyanpro.com");
+	        driver.get("https://mobileworld.banyanpro.com/");
 	
 	     }
 }
